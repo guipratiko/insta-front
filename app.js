@@ -50,7 +50,7 @@ function renderAccounts() {
   
   container.innerHTML = accounts.map(account => `
     <div class="account-card ${selectedAccount?.id === account.id ? 'active' : ''}" 
-         onclick="selectAccount(${account.id})">
+         onclick="selectAccount('${account.id}')">
       <div class="account-info">
         <h3>@${account.username}</h3>
         <p>${account.page_name || 'Sem página'}</p>
