@@ -4,9 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Instagram Test - Meta Developers</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="header">
+      <h1>📱 Instagram Test - Meta Developers</h1>
+      <p>Sistema de teste para automação de DMs e comentários</p>
+    </header>
+
+    <div class="container">
+      <!-- Seção de Contas -->
+      <div class="section">
+        <div class="section-header">
+          <h2>Contas Conectadas</h2>
+          <button id="connectBtn" class="btn-primary">+ Conectar Instagram</button>
+        </div>
+        <div id="accountsList" class="accounts-list"></div>
+      </div>
+
+      <!-- Seção de Mensagens -->
+      <div id="messagesSection" class="section" style="display: none;">
+        <div class="section-header">
+          <h2 id="messagesTitle">Mensagens</h2>
+          <button id="refreshBtn" class="btn-secondary">🔄 Atualizar</button>
+        </div>
+
+        <!-- Enviar Mensagem -->
+        <div class="send-message">
+          <h3>Enviar Mensagem</h3>
+          <input
+            type="text"
+            id="recipientId"
+            placeholder="ID do destinatário (ex: 909062018212935)"
+            class="input"
+          />
+          <textarea
+            id="messageText"
+            placeholder="Digite sua mensagem..."
+            class="textarea"
+            rows="3"
+          ></textarea>
+          <button id="sendBtn" class="btn-primary">✉️ Enviar Mensagem</button>
+        </div>
+
+        <!-- Lista de Mensagens -->
+        <div class="messages-list">
+          <h3>Mensagens Recebidas (<span id="messagesCount">0</span>)</h3>
+          <div id="messagesList" class="messages-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
