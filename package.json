@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "serve -s dist -l 3001 --no-port-switching --no-clipboard",
+    "start": "serve dist -l 3001 --no-request-logging --no-clipboard --single",
     "build": "vite build"
   },
   "dependencies": {
