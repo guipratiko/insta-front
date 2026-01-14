@@ -22,12 +22,21 @@ function setupEventListeners() {
 
 async function loadAccounts() {
   try {
+    console.log(`📥 Fetching accounts from ${API_URL}/instagram/accounts?userId=${USER_ID}`);
     const response = await fetch(`${API_URL}/instagram/accounts?userId=${USER_ID}`);
     const data = await response.json();
+    
+    console.log(`📥 Response:`, data);
+    console.log(`📥 accounts:`, data.accounts);
+    console.log(`📥 Type:`, typeof data.accounts);
+    console.log(`📥 Is array:`, Array.isArray(data.accounts));
+    console.log(`📥 Length:`, data.accounts?.length);
+    
     accounts = data.accounts;
+    console.log(`✅ accounts variable set to:`, accounts);
     renderAccounts();
   } catch (error) {
-    console.error('Erro ao carregar contas:', error);
+    console.error('❌ Erro ao carregar contas:', error);
   }
 }
 
