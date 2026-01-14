@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "npm run build && serve -s dist -l 3001",
+    "start": "npm run build && serve -s dist -l 3001 --no-port-switching",
     "build": "vite build"
   },
   "dependencies": {
